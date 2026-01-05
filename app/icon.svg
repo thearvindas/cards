@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 140" width="100" height="140">
+  <!-- Playing card shape -->
+  <rect x="10" y="10" width="80" height="120" rx="8" fill="#ffffff" stroke="#000000" stroke-width="3"/>
+  
+  <!-- Top-left corner: Ace of Spades -->
+  <g transform="translate(20, 25)">
+    <path d="M 10 0 L 8 8 L 5 5 L 8 12 L 5 15 L 10 15 L 15 15 L 12 12 L 15 5 L 12 8 Z" fill="#000000"/>
+    <text x="10" y="28" font-family="Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="#000000">A</text>
+  </g>
+  
+  <!-- Center: Large spade -->
+  <g transform="translate(50, 70)">
+    <path d="M 0 -15 L -8 0 L -5 5 L -8 10 L 0 15 L 8 10 L 5 5 L 8 0 Z" fill="#000000"/>
+  </g>
+  
+  <!-- Bottom-right corner: Ace of Spades (rotated) -->
+  <g transform="translate(80, 115) rotate(180)">
+    <path d="M 10 0 L 8 8 L 5 5 L 8 12 L 5 15 L 10 15 L 15 15 L 12 12 L 15 5 L 12 8 Z" fill="#000000"/>
+    <text x="10" y="28" font-family="Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="#000000">A</text>
+  </g>
+</svg>
+
