@@ -94,8 +94,7 @@ export default function GameFilter({ constraints, onConstraintsChange, onSubmit 
               type="button"
               className={`nes-btn ${constraints.decks && constraints.decks >= 5 ? 'is-primary' : ''}`}
               onClick={() => {
-                window.open('https://www.youtube.com/watch?v=xvFZjo5PgG0', '_blank');
-                handleChange('decks', 5);
+                window.location.href = 'https://www.youtube.com/watch?v=xvFZjo5PgG0';
               }}
             >
               4+ decks
