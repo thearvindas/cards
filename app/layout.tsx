@@ -3,7 +3,7 @@ import "nes.css/css/nes.min.css";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Card Game Finder - Find Games You Can Play",
+  title: "find a card game",
   description: "Find the perfect card game based on your cards and number of players. Discover hundreds of card games with detailed rules.",
 };
 
