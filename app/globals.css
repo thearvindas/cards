@@ -1,26 +1,162 @@
-@import "tailwindcss";
+@import url("https://fonts.googleapis.com/css?family=Press+Start+2P");
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+html, body, pre, code, kbd, samp {
+  font-family: "Press Start 2P", monospace;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* Hide number input spinners */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  appearance: none;
+  margin: 0;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+input[type="number"] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+/* Fix badge layout - prevent overlap */
+.nes-badge {
+  white-space: nowrap !important;
+  overflow: visible !important;
+  width: auto !important;
+  min-width: auto !important;
+  max-width: none !important;
+  display: inline-block !important;
+  flex-shrink: 0 !important;
+  position: relative !important;
+  margin: 0 !important;
+  vertical-align: middle !important;
+  box-sizing: border-box !important;
+}
+
+/* Remove any absolutely positioned sidebars */
+.nes-badge::before,
+.nes-badge::after,
+.nes-badge > *::before,
+.nes-badge > *::after {
+  display: none !important;
+  content: none !important;
+}
+
+.nes-badge > span {
+  white-space: nowrap !important;
+  overflow: visible !important;
+  text-overflow: clip !important;
+  display: inline-block !important;
+  width: auto !important;
+  min-width: auto !important;
+  max-width: none !important;
+  position: relative !important;
+  box-sizing: border-box !important;
+}
+
+.nes-badge span.is-primary:first-child,
+.nes-badge span.is-success:first-child,
+.nes-badge span.is-warning:first-child {
+  width: auto !important;
+  min-width: auto !important;
+  max-width: none !important;
+  overflow: visible !important;
+  text-overflow: clip !important;
+  padding: 0.2em 0.6em !important;
+  display: inline-block !important;
+  position: relative !important;
+  box-sizing: border-box !important;
+}
+
+/* Mobile responsive fixes */
+@media (min-width: 640px) {
+  .results-header {
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+  }
+  
+  .results-header button {
+    align-self: auto !important;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+.results-header {
+  text-align: center;
 }
+
+/* Ensure form is responsive */
+.nes-container {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.nes-container.with-title {
+  padding: 1rem;
+}
+
+@media (max-width: 640px) {
+  .nes-container.with-title {
+    padding: 0.75rem;
+  }
+  
+  .nes-field {
+    margin-bottom: 1rem;
+  }
+  
+  .nes-btn {
+    font-size: 0.7rem;
+    padding: 0.5rem 0.75rem;
+    white-space: nowrap;
+  }
+  
+  .nes-input {
+    font-size: 0.8rem;
+    min-width: 0;
+  }
+  
+  /* Fix badge overflow on mobile */
+  .nes-badge {
+    min-width: auto !important;
+    font-size: 0.6rem;
+  }
+  
+  /* Ensure text doesn't overflow */
+  body {
+    overflow-x: hidden;
+  }
+  
+  /* Fix footer on mobile */
+  footer {
+    padding: 1rem 0.5rem !important;
+  }
+  
+  footer p {
+    font-size: 0.5rem !important;
+    word-break: break-word;
+  }
+  
+  /* Smaller grid on mobile */
+  .pixel-grid {
+    background-size: 30px 30px !important;
+  }
+}
+
+/* Footer positioning - outside mobile query to prevent conflicts */
+.footer-desktop {
+  display: none !important;
+}
+
+.footer-mobile {
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .footer-desktop {
+    display: block !important;
+  }
+  
+  .footer-mobile {
+    display: none !important;
+  }
+}
+

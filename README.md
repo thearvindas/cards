@@ -1,36 +1,77 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Card Game Finder
+
+Find the perfect card game based on your cards and number of players. Discover hundreds of card games with detailed rules and descriptions.
+
+## Features
+
+- Filter card games by number of players, decks, and joker requirements
+- Detailed descriptions for each game
+- Quick access to Google search for rules
+- Copy LLM prompts for detailed game explanations
+- Retro pixel-art aesthetic using NES.css
+
+## Tech Stack
+
+- **Next.js 16** - React framework
+- **TypeScript** - Type safety
+- **NES.css** - Retro pixel-art styling
+- **Tailwind CSS** - Utility-first CSS
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+- Node.js 18+ 
+- npm, yarn, pnpm, or bun
+
+### Installation
 
 ```bash
+# Install dependencies
+npm install
+
+# Run development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to see the app.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Build for Production
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+npm start
+```
 
-## Learn More
+## Deployment
 
-To learn more about Next.js, take a look at the following resources:
+This project is configured for deployment on Vercel:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Push your code to GitHub
+2. Import the repository on [Vercel](https://vercel.com)
+3. Vercel will automatically detect Next.js and configure the build
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+The app will be live at `https://your-project.vercel.app`
 
-## Deploy on Vercel
+## Project Structure
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```
+├── app/              # Next.js app directory
+│   ├── layout.tsx   # Root layout
+│   └── page.tsx     # Home page
+├── components/       # React components
+│   ├── GameCard.tsx      # Individual game card
+│   ├── GameFilter.tsx    # Filter form
+│   ├── GameResults.tsx   # Results display
+│   ├── Footer.tsx       # Footer component
+│   └── PixelBackground.tsx # Background effect
+├── data/            # Game data
+│   └── games.json   # All card games data
+└── lib/             # Utilities
+    ├── filter.ts    # Game filtering logic
+    └── types.ts     # TypeScript types
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## License
+
+MIT
